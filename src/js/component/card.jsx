@@ -16,7 +16,7 @@ const Card = ({
   const { store, actions } = useContext(Context);
 
   const handleClick = () => {
-    const URL = `/single/${type}/${name}/${id}`;
+    const URL = `/details/${type}/${name}/${id}`;
     actions.addFavorites(URL, name);
   };
 
@@ -35,6 +35,7 @@ const Card = ({
         </div>
       );
     } else if (type === "starship") {
+      console.log;
       return (
         <div className="d-flex flex-column gap-1">
           <li className="d-flex gap-1 align-items-center me-3">
@@ -113,7 +114,7 @@ const Card = ({
           {attributesList()}
           <li className="">
             <Link
-              to={`/single/${type}/${name}/${id}`}
+              to={`/details/${type}/${name}/${id}`}
               className="btn btn-outline-warning"
             >
               See more

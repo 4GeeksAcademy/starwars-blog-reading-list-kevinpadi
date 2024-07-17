@@ -6,14 +6,6 @@ import Card from "../component/card.jsx";
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
-  const cards = 20;
-
-  // useEffect(() => {
-  //   actions.getCharacters();
-  //   actions.getPlanets();
-  //   actions.getStarships();
-  // }, []);
-
   return (
     <div
       className="container-fluid bg-black text-center"
@@ -55,8 +47,8 @@ export const Home = () => {
           >
             <div className="accordion-body  border border-1 border-dark h-auto gap-2 d-flex flex-wrap">
               {store.characters.length == 0 ? (
-                <div class="spinner-border text-warning" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border text-warning" role="status">
+                  <span className="visually-hidden">Loading...</span>
                 </div>
               ) : (
                 store.characters.map((character, index) => (
@@ -95,8 +87,8 @@ export const Home = () => {
           >
             <div className="accordion-body  border border-1 border-dark h-auto gap-2 d-flex flex-wrap">
               {store.planets.length == 0 ? (
-                <div class="spinner-border text-warning" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border text-warning" role="status">
+                  <span className="visually-hidden">Loading...</span>
                 </div>
               ) : (
                 store.planets.map((planet, index) => (
@@ -135,15 +127,15 @@ export const Home = () => {
           >
             <div className="accordion-body border border-1 border-dark h-auto gap-2 d-flex flex-wrap">
               {store.starships.length == 0 ? (
-                <div class="spinner-border text-warning" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border text-warning" role="status">
+                  <span className="visually-hidden">Loading...</span>
                 </div>
               ) : (
                 store.starships.map((starship, index) => (
                   <Card
                     name={starship.name}
                     speed={starship.max_atmosphering_speed}
-                    starshipClass={starship.starship_class}
+                    starshipclassName={starship.starship_class}
                     type="starship"
                     key={index}
                     id={index + 1}

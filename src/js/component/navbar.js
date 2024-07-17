@@ -28,9 +28,9 @@ export const Navbar = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-black">
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-black">
               {store.favorites.length}
-              <span class="visually-hidden">unread messages</span>
+              <span className="visually-hidden">unread messages</span>
             </span>
             Favorites
           </button>
@@ -40,8 +40,8 @@ export const Navbar = () => {
                 Add new favorites
               </span>
             ) : (
-              store.favorites.map((item) => (
-                <li>
+              store.favorites.map((item, index) => (
+                <li key={index}>
                   <Link
                     to={item.url}
                     className="dropdown-item text-white"
