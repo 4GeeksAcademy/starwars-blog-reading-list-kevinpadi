@@ -19,7 +19,7 @@ const Card = ({
     const URL = `/details/${type}/${name}/${id}`;
     actions.addFavorites(URL, name);
   };
-
+  console.log(id);
   const attributesList = () => {
     if (type === "character") {
       return (

@@ -48,15 +48,20 @@ const getState = ({ getStore, getActions, setStore }) => {
         const localData = localStorage.getItem("starships");
         if (localData) {
           setStore({ starships: JSON.parse(localData) });
-        } else
+        } else {
           try {
             let response = await fetch(`${URL}/starships`);
             let data = await response.json();
+            console.log(data.results);
+            data.results = data.results.map((item) => {
+              return { ...item, id: item.url.split("/")[5] };
+            });
             setStore({ starships: data.results });
             localStorage.setItem("starships", JSON.stringify(data.results));
           } catch (error) {
             console.log(error);
           }
+        }
       },
       getFavorites: () => {
         const localData = localStorage.getItem("favorites");

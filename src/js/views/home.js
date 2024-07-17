@@ -138,7 +138,7 @@ export const Home = () => {
                     starshipclassName={starship.starship_class}
                     type="starship"
                     key={index}
-                    id={index + 1}
+                    id={starship.id}
                   />
                 ))
               )}
