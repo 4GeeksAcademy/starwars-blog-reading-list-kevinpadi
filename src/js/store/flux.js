@@ -89,8 +89,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ favorites: newFavorites });
           localStorage.setItem("favorites", JSON.stringify(newFavorites));
         }
-
-        // Agregar el nuevo favorito a la lista existente
       },
     },
   };
