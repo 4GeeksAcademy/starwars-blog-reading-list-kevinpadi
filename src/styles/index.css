@@ -1,3 +1,7 @@
 /* 
     General Styles
 */
+
+.dropdown-item:hover {
+  background-color: black;
+}
